@@ -1,33 +1,38 @@
 package test.Store;
 
 public class Product {
-    private String code;
     private String name;
+    private int volumn;
     private double price;
-    
-
-    public Product(String c, String n, double p){
-        setCode(c);
+    private int weight;
+   
+    public Product(String n,double p){
         setName(n);
         setPrice(p);
     }
-    public String getCode() {
-        return code;
+    public double getPrice() {
+        return price;
     }
-    public void setCode(String code) {
-        this.code = code;
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    public int getWeight() {
+        return weight;
+    }
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
     public String getName() {
         return name;
     }
     public void setName(String name) {
         this.name = name;
+}
+    public void setVolumn(int v){
+        this.volumn = v;
     }
-    public double getPrice() {
-        return price;
+    public int getVolumn() {
+       return this.volumn;
     }
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
 }
