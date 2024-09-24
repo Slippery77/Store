@@ -1,10 +1,7 @@
 package test.Store;
 
-public class Cashier {
-    private InventoryCart[] carts;
-    private String name;
-    
-
+public class Cashier {private String name;
+    InventoryCart ic;
     public Cashier(String n){
         setName(n);
     }
@@ -24,7 +21,12 @@ public class Cashier {
                     count = ic.getAmount(p.getName());
                     check[j]=true; // เช็คว่าถ้านับแล้วให้ check[j] ที่index นั้นเป็น true แล้วหลุดเงื่อนไขนี้
                 }
-            }System.out.println(count+" x \t"+p.getName()+"\t("+p.getCode()+")\t"+p.getPrice());
+            }
+            if(p.getName().equals("Milk")){
+                System.out.println(count+" x \t"+p.getName()+"\t"+p.getVolumn()+" cc"+"\t\t"+p.getPrice());
+            }
+            else
+            System.out.println(count+" x \t"+p.getName()+"\t"+p.getWeight()+" gram"+"\t\t"+p.getPrice());
             total +=count*p.getPrice();
             check[i]=true; //เช็คว่าถ้านับ check[i] ที่index พิมไปแล้วจะขึ้นเป็น true และหลุด loop 
         }  
